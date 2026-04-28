@@ -1,16 +1,43 @@
-# React + Vite
+## 🛠️ Tech Stack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- **Framework**: [React.js](https://reactjs.org/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Styling**: Vanilla CSS (Custom properties, Flexbox/Grid, Keyframe animations)
+- **Design System**: High-fidelity recreation based on modern web design principles.
 
-Currently, two official plugins are available:
+## 🚀 Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Prerequisites
 
-## React Compiler
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)
+- npm or yarn
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Installation
 
-## Expanding the ESLint configuration
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Chetanvaidada/Olive_mimic.git
+   ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. Navigate to the project directory:
+   ```bash
+   cd Olive_mimic
+   ```
+
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## 📸 Preview
+
+The application features a sophisticated auto-sliding carousel where products like *Dave's Killer Bread*, *San Pellegrino*, and *Larabar* are showcased with their unique nutritional scores and "Oliver Says" insights.
+
+---
+
+Built with ❤️ by [Chetan Vaidada](https://github.com/Chetanvaidada)
