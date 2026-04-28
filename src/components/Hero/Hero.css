@@ -1,0 +1,111 @@
+/* ── Hero Section ── */
+.hero {
+  text-align: center;
+  padding: 56px 24px 0;
+  max-width: 780px;
+  margin: 0 auto;
+  background-color: var(--color-bg);
+}
+
+/* Trust badge lives in Hero */
+.hero__trust {
+  margin-bottom: 28px;
+}
+
+/* Heading */
+.hero__heading {
+  font-size: clamp(40px, 5.5vw, 68px);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -2px;
+  color: var(--color-dark-green);   /* #283618 Dark Forest Green */
+  margin-bottom: 20px;
+  animation: fadeUp 0.5s ease both;
+  animation-delay: 0.2s;
+}
+
+/* Subtext */
+.hero__subtext {
+  font-size: 15.5px;
+  line-height: 1.72;
+  color: var(--color-text-body);   /* #4A4A4A Charcoal */
+  max-width: 480px;
+  margin: 0 auto 36px;
+  animation: fadeUp 0.5s ease both;
+  animation-delay: 0.3s;
+}
+
+/* CTA row */
+.hero__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin-bottom: 56px;
+  animation: fadeUp 0.5s ease both;
+  animation-delay: 0.4s;
+}
+
+/* iOS button */
+.hero__btn-ios {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background-color: var(--color-dark-green);
+  color: var(--color-white);
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: 0 4px 20px rgba(30, 58, 30, 0.28);
+}
+
+.hero__btn-ios:hover {
+  background-color: var(--color-mid-green);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(30, 58, 30, 0.38);
+}
+
+/* Community link */
+.hero__btn-community {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-dark-green);
+  transition: gap var(--transition-fast);
+}
+
+.hero__btn-community:hover {
+  gap: 10px;
+}
+
+/* ── Shared animations used by child components too ── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .hero {
+    padding: 40px 16px 0;
+  }
+
+  .hero__heading {
+    letter-spacing: -1.2px;
+  }
+
+  .hero__btn-community {
+    display: none;
+  }
+}

@@ -1,0 +1,420 @@
+/* ── Phone Mockup Section ── */
+.phone-section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 20px 80px;
+  min-height: 500px;
+  max-width: 72rem;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* ── Phone outer gradient frame ── */
+.phone-outer-frame {
+  position: relative;
+  width: 290px;
+  min-width: 290px;
+  height: 600px;
+  border-radius: 40px;
+  background: linear-gradient(180deg, rgba(88, 88, 88, 0.24) 0%, rgba(255, 255, 255, 0.24) 100%);
+  box-shadow:
+    0 40px 80px rgba(0, 0, 0, 0.18),
+    0 20px 40px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+/* ── Phone inner frame ── */
+.phone-frame {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 270px;
+  height: 580px;
+  background: #ffffff;
+  border-radius: 34px;
+  overflow: hidden;
+  z-index: 4;
+}
+
+/* ── Dynamic Island ── */
+.phone-frame__island {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 24px;
+  background: #000;
+  border-radius: 9999px;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 5px;
+}
+
+.phone-frame__camera {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(255, 255, 255, 0.04) 72%,
+    rgba(255, 255, 255, 0.16) 100%
+  );
+}
+
+/* ── Dark background behind slider area ── */
+.phone-frame__dark-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 145px;
+  background: #e8e9e3;
+  border-radius: 34px 34px 0 0;
+  z-index: 5;
+}
+
+/* ── Product Slider Carousel ── */
+.phone-slider-viewport {
+  position: absolute;
+  top: 50px;
+  left: -60px;
+  right: -60px;
+  height: 100px;
+  z-index: 55;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.phone-slider-mask {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 25%,
+    black 75%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 25%,
+    black 75%,
+    transparent 100%
+  );
+}
+
+.phone-slider-track-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  position: relative;
+}
+
+.phone-slider-track {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.phone-slider-item {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  will-change: opacity, transform;
+  background: #f0f1ec;
+}
+
+.phone-slider-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 14px;
+}
+
+.phone-slider-item--active {
+  z-index: 2;
+}
+
+/* ── White content panel — starts below slider/dark area ── */
+.phone-content-panel {
+  position: absolute;
+  top: 135px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #ffffff;
+  border-radius: 18px 18px 0 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.phone-content-panel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Grey dash handle — like iOS bottom sheet */
+.phone-content-panel__handle {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0 4px;
+}
+
+.phone-content-panel__handle::after {
+  content: '';
+  width: 36px;
+  height: 4px;
+  border-radius: 999px;
+  background: #d1d1d6;
+}
+
+/* ── Phone content (text details) — directly after carousel ── */
+.phone-content {
+  background: var(--color-white);
+  padding: 14px 14px 18px;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.phone-content--transitioning {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.phone-content__title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-dark-green);
+  line-height: 1.35;
+  margin-bottom: 10px;
+}
+
+.phone-content__meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.phone-content__thumb {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #f0f1ec;
+}
+
+.phone-content__thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.phone-content__brand-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-content__author {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+/* Score row */
+.phone-content__score-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.score-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.score-badge__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: background-color 0.4s ease;
+}
+
+.score-badge__number {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--color-dark-green);
+  line-height: 1;
+}
+
+.score-badge__label {
+  font-size: 9px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  display: block;
+}
+
+.score-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.score-actions__btn {
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  padding: 3px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.score-actions__btn:hover {
+  background: rgba(0, 0, 0, 0.06);
+  color: var(--color-dark-green);
+}
+
+/* Divider */
+.phone-content__divider {
+  height: 1px;
+  background: #eeefe8;
+  margin: 8px 0;
+}
+
+/* Oliver Says */
+.oliver-says {
+  background: #f5f6f1;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+}
+
+.oliver-says__header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.oliver-says__label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-dark-green);
+}
+
+.oliver-says__text {
+  font-size: 8.5px;
+  line-height: 1.6;
+  color: var(--color-text-body);
+}
+
+/* Breakdown title */
+.phone-content__breakdown-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-dark-green);
+  margin-bottom: 8px;
+}
+
+/* Breakdown bars */
+.phone-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.phone-breakdown__row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.phone-breakdown__label {
+  font-size: 8.5px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  width: 42px;
+  flex-shrink: 0;
+}
+
+.phone-breakdown__bar-track {
+  flex: 1;
+  height: 5px;
+  background: #f0f1ec;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.phone-breakdown__bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.4s ease;
+}
+
+.phone-breakdown__value {
+  font-size: 8px;
+  font-weight: 700;
+  color: var(--color-dark-green);
+  width: 28px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .phone-outer-frame {
+    width: 250px;
+    min-width: 250px;
+    height: 520px;
+  }
+
+  .phone-frame {
+    width: 230px;
+    height: 500px;
+  }
+
+  .phone-slider-viewport {
+    left: -40px;
+    right: -40px;
+  }
+
+  .phone-slider-item {
+    width: 65px;
+    height: 65px;
+  }
+}

@@ -1,0 +1,72 @@
+/* ── Global Reset & Design Tokens ── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* ── oliveapp.com Palette ── */
+
+  /* Backgrounds */
+  --color-bg:          #f5f5f0;   /* very light cool sage (from oliveapp.com) */
+  --color-white:       #ffffff;
+
+  /* Brand greens */
+  --color-dark-green:  #2b2d1e;   /* Dark Olive — headlines, CTA buttons */
+  --color-mid-green:   #3a3d28;   /* hover state for dark green */
+  --color-olive:       #AEB93E;   /* Olive Leaf Green — logo accent */
+
+  /* Text */
+  --color-text-body:   #555555;   /* Charcoal — sub-headline / body copy */
+  --color-text-muted:  #6B6B6B;   /* Muted charcoal — nav links, labels */
+
+  /* UI */
+  --color-border:      #e2e3dc;   /* Subtle cool sage border */
+  --color-score-red:   #e53e3e;
+  --color-score-green: #38a169;
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  /* Shadows */
+  --shadow-card:  0 2px 12px rgba(0, 0, 0, 0.07);
+  --shadow-phone: 0 40px 80px rgba(0, 0, 0, 0.18), 0 20px 40px rgba(0, 0, 0, 0.1);
+
+  /* Transitions */
+  --transition-fast: 0.18s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-white); /* outer = white, card = mint green */
+  color: var(--color-dark-green);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-sans);
+}
+
+ul {
+  list-style: none;
+}

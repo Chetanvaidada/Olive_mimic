@@ -1,0 +1,56 @@
+/* ── Trust Badge ── */
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  animation: fadeUp 0.5s ease both;
+  animation-delay: 0.1s;
+}
+
+.trust-badge__avatars {
+  display: flex;
+  align-items: center;
+}
+
+.trust-badge__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--color-white);
+  overflow: hidden;
+  margin-left: -8px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.trust-badge__avatar:first-child {
+  margin-left: 0;
+}
+
+.trust-badge__avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.trust-badge__more {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--color-white);
+  background-color: var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  margin-left: -8px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 0;
+}
